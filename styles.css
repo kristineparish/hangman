@@ -24,7 +24,7 @@ body {
     border-radius: 5px;
 }
 
-h1 {
+h1, footer {
     background-color: #4589b1;
     margin: 0;
     padding: 30px;
@@ -83,5 +83,14 @@ button:hover {
 
 .disabled:hover {
     cursor: default;
+}
+
+footer {
+    margin-top: 80px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
 }
 
