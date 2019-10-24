@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Civilized Hangman</h1>
+
+    <div id="app">
+        
+        <div id="image">
+            
+            <div id="word">
+                <h2>{{displayedWord}}</h2>
+            </div>
+            
+            <p>Guesses remaining: {{guesses}}</p>
+
+            <p>{{message}}</p>
+        </div>
+        
+        <div id="text">
+            
+            <button id="startButton" v-on:click="startGame()">{{buttonText}}</button>
+
+            <div class="controls">
+                <button v-on:click="showAll()">Show All Letters</button>
+                <button v-on:click="showRemaining()">Show Remaining Letters</button>
+                <button v-on:click="showGuessed()">Show Guessed Letters</button>
+            </div>
+
+            <div id="letters">
+                <div class="letter" v-bind:class="{ active: letter.isActive, disabled: gameIsStarted === false }" v-for="letter in filteredLetters" v-on:click="guessLetter(letter)">
+                    <!--<input type="checkbox" v-model="letter.isActive" />-->
+                    <span>{{ letter.letter }}</span>
+                </div>
+            </div>
+            
+        </div>
+
+        
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
